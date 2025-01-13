@@ -9,7 +9,9 @@ import StartPage from './pages/StartPage';
 import Razboi from './pages/Razboi';
 import Romanizarea from './pages/Romanizarea';
 import Mostenirea from './pages/Mostenirea';
-import Authentification from './pages/Authentification';
+import LogIn from './components/authentification/LogIn'
+import { Cont } from './pages/Cont';
+
 
 
 
@@ -23,7 +25,8 @@ function App() {
         <Route path="/razboaiele_daco-romane" element={<Razboi />} />
         <Route path="/romanizarea" element={<Romanizarea/>}/>
         <Route path="/mostenirea" element={<Mostenirea/>}/>
-        <Rotue path='/login' element={<Authentification/>}/>
+        <Route path='/login' element={<LogIn/>}/>
+        <Route path='/cont' element={<Cont/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

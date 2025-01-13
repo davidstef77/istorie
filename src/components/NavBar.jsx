@@ -9,8 +9,17 @@ const Navbar = () => {
   useEffect(() => {
     // Check if the user is logged in when the component is mounted
     const token = localStorage.getItem('authToken');
-    setIsLoggedIn(!!token);
+    setIsLoggedIn(!!token); // Actualizează starea pe baza tokenului
   }, []);
+
+  // Navighează la cont sau la pagina principală în funcție de starea de login
+  const handleAccountClick = () => {
+    if (isLoggedIn) {
+      navigate('/cont'); 
+    } else {
+      navigate('/login'); // Dacă utilizatorul nu este logat, merge la pagina de login
+    }
+  };
 
   return (
     <nav className="bg-gray-800 p-4">
@@ -32,11 +41,7 @@ const Navbar = () => {
         {/* Pictogramă Cont */}
         <li className="flex items-center">
           <a
-            onClick={(e) => {
-              e.preventDefault(); // Prevent default behavior of the anchor tag
-              // Navigate to either the login page or user account page based on login status
-              navigate('/login')
-            }}
+            onClick={handleAccountClick} // Apelarea funcției handleAccountClick
             className="hover:text-lg transition-all duration-75 flex items-center justify-center cursor-pointer"
           >
             <FaUser className="text-2xl md:text-xl" />
