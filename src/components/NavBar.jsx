@@ -38,16 +38,7 @@ const Navbar = () => {
           </a>
         </li>
 
-        {/* Pictogramă Cont */}
-        <li className="flex items-center">
-          <a
-            onClick={handleAccountClick} // Apelarea funcției handleAccountClick
-            className="hover:text-lg transition-all duration-75 flex items-center justify-center cursor-pointer"
-          >
-            <FaUser className="text-2xl md:text-xl" />
-            <span className="hidden md:inline ml-2">Cont</span>
-          </a>
-        </li>
+        
       </ul>
     </nav>
   );

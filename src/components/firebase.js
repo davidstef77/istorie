@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+
 
 // Configurația Firebase
 const firebaseConfig = {
@@ -65,4 +67,6 @@ export const getUser = () => {
   }
 };
 
-export { auth, signInWithGoogle, logOut };
+
+export const db = getFirestore(app);
+export { auth, signInWithGoogle, logOut  };
